@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Hanken Grotesk", Arial, sans-serif;
+    background-color: #262626;
+}
+
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+
+    /*border: 3px solid lime;*/
+}
