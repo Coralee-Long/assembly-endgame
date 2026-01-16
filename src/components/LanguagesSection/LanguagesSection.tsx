@@ -1,19 +1,23 @@
 import { languages } from "./languages"
-import  { ListItem } from "./ListItem"
+import { ListItem } from "./ListItem"
 
 export const LanguagesSection = () => {
 
-    return(
+    return (
         <section className="languages-section">
-            <ul>
+            <span className="list-wrapper">
                 {languages.map((item, index) => (
                     <ListItem
+                        key={item.name}
                         name={item.name}
-                        backgroundColor={item.backgroundColor}
-                        color={item.color}
+                        styles={{
+                            backgroundColor: item.backgroundColor,
+                            color: item.color,
+                        }}
                     />
+
                 ))}
-            </ul>
+            </span>
         </section>
     )
 }

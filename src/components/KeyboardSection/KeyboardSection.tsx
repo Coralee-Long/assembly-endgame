@@ -1,6 +1,6 @@
 export const KeyboardSection = () => {
 
-    return(
+    return (
         <section className="keyboard-section">
             Keyboard Section
         </section>

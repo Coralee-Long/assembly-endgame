@@ -1,5 +1,5 @@
 export const FooterSection = () => {
-  return (
-      <section className="footer-section">Footer Section</section>
-  );
+    return (
+        <section className="footer-section">Footer Section</section>
+    );
 };

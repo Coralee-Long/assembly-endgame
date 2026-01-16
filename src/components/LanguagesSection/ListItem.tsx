@@ -1,18 +1,15 @@
 export type ListItemProps = {
-    name: string,
-    backgroundColor: string,
-    color: string,
-}
+    name: string;
+    styles: {
+        backgroundColor: string;
+        color: string;
+    };
+};
 
-export const ListItem = ({
-    name,
-    backgroundColor,
-    color
-}:ListItemProps) => {
-
-    return(
-        <li className="list-item" key={name} style={{backgroundColor, color}}>
+export const ListItem = ({name, styles}: ListItemProps) => {
+    return (
+        <span className="list-item" style={styles}>
             {name}
-        </li>
-    )
-}
+        </span>
+    );
+};

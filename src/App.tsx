@@ -6,17 +6,21 @@ import {
     StatusSection,
     FooterSection,
 } from "./components";
+import { useState } from "react";
+
 function App() {
-  return (
-    <div className="App">
-        <GameHeader />
-        <StatusSection />
-        <LanguagesSection />
-        <MysteryWordSection />
-        <KeyboardSection />
-        <FooterSection />
-    </div>
-  );
+    const [word, _setWord] = useState("pineapple");
+
+    return (
+        <div className="App">
+            <GameHeader/>
+            <StatusSection/>
+            <LanguagesSection/>
+            <MysteryWordSection word={word}/>
+            <KeyboardSection/>
+            <FooterSection/>
+        </div>
+    );
 }
 
 export default App;
