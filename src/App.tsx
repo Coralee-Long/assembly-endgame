@@ -16,7 +16,7 @@ function App() {
         <div className="App">
             <div className="app-wrapper">
                 <GameHeader/>
-                <StatusSection/>
+                <StatusSection status="You win!" text="Well done! 🎉"/>
                 <LanguagesSection/>
                 <MysteryWordSection word={word}/>
                 <KeyboardSection/>

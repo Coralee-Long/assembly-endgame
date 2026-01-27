@@ -1,8 +1,13 @@
-export const StatusSection = () => {
+export type StatusProps = {
+    status: string;
+    text: string;
+}
+
+export const StatusSection = ({status, text}: StatusProps) => {
     return (
         <section className="status-section">
-            <span className="status-title">Status</span>
-            <span className="status-subtitle">some text</span>
+            <span className="status-title">{status}</span>
+            <span className="status-subtitle">{text}</span>
         </section>
     );
 };
