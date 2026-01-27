@@ -1,16 +1,16 @@
 import { convertStringToArray } from "../utils";
 
 export type MysteryWordProps = {
-    word: string,
+    currentWord: string,
 }
 
-export const MysteryWordSection = ({word}: MysteryWordProps) => {
-    const letters = convertStringToArray(word);
+export const MysteryWordSection = ({currentWord}: MysteryWordProps) => {
+    const letters = convertStringToArray(currentWord);
 
     return (
         <section className="mystery-word-section">
             {letters.map((letter, index) => (
-                <span key={index} className="letter-block">{letter}</span>
+                <span key={index} className="letter-block">{letter.toUpperCase()}</span>
             ))}
         </section>
     )

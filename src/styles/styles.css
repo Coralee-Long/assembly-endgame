@@ -125,7 +125,7 @@
     gap: 10px;
 }
 
-.keyboard-section .keyboard-letter {
+.keyboard-section .keyboard-letter-btn {
     background-color: #FCBA29;
     height: 50px;
     width: 50px;
@@ -134,6 +134,14 @@
     font-weight: 600;
     font-size: 1.25rem;
     cursor: pointer;
+}
+
+.keyboard-section .keyboard-letter-btn.correct {
+    background-color: #10A95B;
+}
+
+.keyboard-section .keyboard-letter-btn.incorrect {
+    background-color: #EC5D49;
 }
 
 .footer-section {
@@ -151,7 +159,7 @@
     padding: 1rem;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 1.25rem;
     width: 50%;
     min-width: 225px;
