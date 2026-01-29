@@ -7,11 +7,16 @@ import {
     FooterSection,
 } from "./components";
 import { useState } from "react";
+import { convertStringToArray } from "./components/utils";
 
-function App() {
+export const App = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [currentWord, _setCurrentWord] = useState("pineapple");
     const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    const keyboardLetters = convertStringToArray(alphabet);
+    const currentWordAsLetters = convertStringToArray(currentWord);
 
     const addLetterAsGuess = (letter: string) => {
         setGuessedLetters(prevLetters =>
@@ -26,12 +31,15 @@ function App() {
                 <GameHeader/>
                 <StatusSection status="You win!" text="Well done! 🎉"/>
                 <LanguagesSection/>
-                <MysteryWordSection currentWord={currentWord}/>
-                <KeyboardSection onLetterClick={addLetterAsGuess} guessedLetters={guessedLetters} currentWord={currentWord}/>
+                <MysteryWordSection currentWord={currentWord} guessedLetters={guessedLetters}/>
+                <KeyboardSection
+                    onLetterClick={addLetterAsGuess}
+                    guessedLetters={guessedLetters}
+                    keyboardLetters={keyboardLetters}
+                    currentWordAsLetters={currentWordAsLetters}
+                />
                 <FooterSection/>
             </div>
         </div>
     );
 }
-
-export default App;

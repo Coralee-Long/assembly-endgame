@@ -1,18 +1,18 @@
 import { clsx } from 'clsx';
-import { convertStringToArray } from "../utils";
 
 export type KeyboardProps = {
     onLetterClick: (letter: string) => void;
     guessedLetters: string[];
-    currentWord: string;
+    keyboardLetters: string[];
+    currentWordAsLetters: string[];
 }
 
-export const KeyboardSection = ({onLetterClick,guessedLetters,currentWord}:KeyboardProps) => {
-
-    const alphabet = "abcdefghijklmnopqrstuvwxyz"
-    const keyboardLetters = convertStringToArray(alphabet);
-    const currentWordAsLetters = convertStringToArray(currentWord);
-
+export const KeyboardSection = ({
+        onLetterClick,
+        guessedLetters,
+        keyboardLetters,
+        currentWordAsLetters
+    }:KeyboardProps) => {
 
     return (
         <section className="keyboard-section">
@@ -31,7 +31,7 @@ export const KeyboardSection = ({onLetterClick,guessedLetters,currentWord}:Keybo
                             incorrect: isGuessed && !isCorrect,
                         })}
                     >
-                        {letter.toUpperCase()}
+                        {isGuessed && isCorrect ? letter.toUpperCase() : null}
                     </button>
                 );
             })}
